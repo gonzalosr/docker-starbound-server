@@ -1,21 +1,21 @@
 FROM ubuntu:latest
 
-MAINTAINER Michael Lawrence <me@mikelawrence.co>
+MAINTAINER blade1981m <blade1981m@gmail.com>
 
-VOLUME ["/starbound"]
+VOLUME /starbound
 
 COPY start.sh /start.sh
 
-RUN apt-get update \
-	&& apt-get install lib32gcc1 wget libpng12-0 -y \
-	&& mkdir -p /starbound /steamcmd \
-	&& cd /steamcmd \
-	&& wget -o /tmp/steamcmd.tar.gz https://steamcdn-a.akamaihd.net/client/installer/steamcmd_osx.tar.gz \
-	&& tar zxvf steamcmd_linux.tar.gz \
-	&& rm steamcmd_linux.tar.gz \
-	&& chmod +x ./steamcmd.sh /start.sh
+RUN apt-get update
+RUN apt-get install lib32gcc1 wget libpng12-0 -y
+RUN mkdir -p /starbound /steamcmd
+RUN cd /steamcmd
+RUN wget -o /tmp/steamcmd.tar.gz https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+RUN tar zxvf steamcmd_linux.tar.gz
+RUN rm steamcmd_linux.tar.gz
+RUN chmod +x ./steamcmd.sh /start.sh
 
 EXPOSE 21025
-EXPOSE 21026
+EXPOSE 20126
 
 CMD /start.sh
