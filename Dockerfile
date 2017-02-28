@@ -8,12 +8,14 @@ COPY start.sh /start.sh
 
 RUN apt-get update
 RUN apt-get install lib32gcc1 wget libpng12-0 -y
+RUN apt-get install libvorbisfile3
 RUN mkdir -p /starbound /steamcmd
 RUN cd /steamcmd
 RUN wget -o /tmp/steamcmd.tar.gz https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
 RUN tar zxvf steamcmd_linux.tar.gz
 RUN rm steamcmd_linux.tar.gz
-RUN chmod +x ./steamcmd.sh /start.sh
+RUN chmod +x ./steamcmd.sh /start.sh /install.sh
+RUN /install.sh
 
 EXPOSE 21025
 EXPOSE 20126
