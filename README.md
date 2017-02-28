@@ -8,7 +8,3 @@ _Run a Starbound server with Docker!_
 ##### Notes
 
 The Starbound game files will be downloaded via steamcmd into the starbound directory. This is to ensure persistence.
-
-##### Unstable
-
-Adding the env variable `STARBOUND_UNSTABLE=true` will run the unstable Starbound version.
