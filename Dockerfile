@@ -15,6 +15,7 @@ RUN wget -o /tmp/steamcmd.tar.gz https://steamcdn-a.akamaihd.net/client/installe
 RUN tar zxvf steamcmd_linux.tar.gz
 RUN rm steamcmd_linux.tar.gz
 RUN chmod +x ./steamcmd.sh /start.sh
+RUN cd ..
 RUN install.sh
 
 EXPOSE 21025
