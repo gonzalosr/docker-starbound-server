@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER blade1981m <blade1981m@gmail.com>
+MAINTAINER gonzalosr <gonzalo@gonzalosr.com>
 
 VOLUME /starbound
 
